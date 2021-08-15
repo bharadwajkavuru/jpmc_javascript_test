@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <script type="text/javascript" src="editor.js"></script>
+  <link type="text/css" rel="stylesheet" href="editor.css"/>
+</head>
+
+<body>
+  <div id="container" >
+    <fieldset>
+	<button class="fontStyle bold" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text"></button>
+      <button class="fontStyle italic" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text"></button>
+      
+	   <!-- font size start -->
+      <select id="fontSize"  onclick="changeSize()">
+        <option value="1">1</option>      
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+       
+	  <button class="fontStyle copy" onclick="document.execCommand('copy',false, null)">
+	  <copySelection></copySelection></button>  
+	  <button class="fontStyle cut" onclick="document.execCommand('cut',false, null)">
+	  <cutEditor></cutEditor></button>  
+	<button class="fontStyle paste" onclick="paste()">
+	  <pasteEditor></pasteEditor></button>  
+ <!-- font size end -->
+      <button class="fontStyle underline" onclick="document.execCommand( 'underline',false,null);"></button>
+      <button class="fontStyle align-left" onclick="document.execCommand( 'justifyLeft',false,null);"><justifyLeft></justifyLeft></button>
+      <button class="fontStyle align-center" onclick="document.execCommand( 'justifyCenter',false,null);"><justifyCenter></justifyCenter></button>
+      <button class="fontStyle align-right" onclick="document.execCommand( 'justifyRight',false,null);"><justifyRight></justifyRight></button>
+      <button class="fontStyle orderedlist" onclick="document.execCommand('insertOrderedList', false, null);"><insertOrderedList></insertOrderedList></button>
+      <button class="fontStyle unorderedlist" onclick="document.execCommand('insertUnorderedList',false, null)"><insertUnorderedList></insertUnorderedList></button> 	  
+      <input class="color-apply" type="color" onchange="chooseColor()" id="myColor"> 
+	  <button class="fontStyle h1Heading" onclick="heading('h1')" alt="H1">
+	  <h1Heading>H1</h1Heading></button> 
+	   <button class="fontStyle h2Heading" onclick="heading('h2')">
+	  <h2Heading>H2</h2Heading></button> 
+	   <button class="fontStyle h3Heading" onclick="heading('h3')">
+	  <h3Heading>H3</h3Heading></button> 
+	   <button class="fontStyle h4Heading" onclick="heading('h4')">
+	  <h4Heading>H4</h4Heading></button> 
+	   <button class="fontStyle h5Heading" onclick="heading('h5')">
+	  <h5Heading>H5</h5Heading></button> 
+	   <button class="fontStyle h6Heading" onclick="heading('h6')">
+	  <h6Heading>H6</h6Heading></button> 
+	   <button class="fontStyle pHeading" onclick="heading('p')">
+	  <pHeading>P</pHeading></button> 
+
+     
+  </fieldset>
+
+  <div id="editor1" contenteditable="true" data-text="Enter description...."></div>
+  
+</div>
+
+</body>
+</html>
