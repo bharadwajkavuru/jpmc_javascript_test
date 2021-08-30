@@ -20,16 +20,18 @@ function chooseColor(){
 	  const items =  await navigator.clipboard.read();
 	  const textBlob = await items[0].getType("text/plain");
 	  const text =  await (new Response(textBlob)).text();
-	  document.getElementById("editor1").innerHTML = text;
-	}
+	  //document.getElementById("editor1").innerText = text;
+	  document.getElementById("editor1").innerHTML += text;
+	}	
 	
 	function heading(type){
-		var data=document.getElementById("editor1").innerText;
+		var data = window.getSelection().toString();
 		var h = document.createElement(type);
 		var t = document.createTextNode(data); 
-		h.appendChild(t); 
-		document.getElementById("editor1").innerText = "";
-		document.getElementById("editor1").appendChild(h);
+		h.appendChild(t);
+		var strMessage1 = document.getElementById("editor1") ;
+		strMessage1.outerHTML = strMessage1.outerHTML
+                        .replace(data,h.outerHTML);
 	}
 	
 	
